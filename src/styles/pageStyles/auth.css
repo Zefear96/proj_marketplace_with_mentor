@@ -1,0 +1,21 @@
+body{
+       background-image: linear-gradient(to left bottom, #875cbe, #687cdb, #4198ed, #17b2f5, #27c9f6);
+       height: 100vh;
+
+}
+
+.auth-block {
+       box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+       /* background:  white; */
+       backdrop-filter: blur(100px);
+       display: flex;
+       flex-direction: column;
+       margin: 5% auto;
+       padding: 2%;
+       justify-content: center;
+       width: 30%;
+       border: 2px solid rgba(255, 255, 255, .5);
+       border-radius: 20px;
+       background: whitesmoke;
+       
+}       
