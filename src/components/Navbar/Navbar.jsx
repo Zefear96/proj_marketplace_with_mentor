@@ -11,13 +11,22 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { ThemeProvider, createTheme } from "@mui/material/styles"; // custom
 import StoreIcon from "@mui/icons-material/Store";
 
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [
+  {
+    type: "Products",
+    path: "/products",
+  },
+  {
+    type: "Admin",
+    path: "/admin",
+  },
+];
 
 // custom
 const settings = [
@@ -62,13 +71,19 @@ function ResponsiveAppBar() {
 
   // custom
   const navigate = useNavigate();
+  const { logout, user, checkAuth } = useAuth();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
             <StoreIcon />
             <Typography
               variant="h6"
@@ -119,18 +134,22 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.type} onClick={handleCloseNavMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate(page.path)}
+                    >
+                      {page.type}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap
               component="a"
-              href=""
+              onClick={() => navigate("/")}
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -142,24 +161,24 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              AlexShop
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
+                  key={page.type}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  onClick={() => navigate(page.path)}
                 >
-                  {page}
+                  {page.type}
                 </Button>
               ))}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+              <Tooltip title="Account">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt={user} src="..." />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -188,6 +207,11 @@ function ResponsiveAppBar() {
                     </Typography>
                   </MenuItem>
                 ))}
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center" onClick={logout}>
+                    Logout
+                  </Typography>
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>

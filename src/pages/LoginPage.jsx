@@ -95,8 +95,8 @@ const LoginPage = () => {
 
         <Button
           variant="contained"
-          style={{ width: "75%", margin: "5% auto", background: "black" }}
           onClick={() => login(username, password)}
+          className="btn-auth"
         >
           Login
         </Button>

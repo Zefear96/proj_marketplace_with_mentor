@@ -1,12 +1,7 @@
-body{
-       background-image: linear-gradient(to left bottom, #875cbe, #687cdb, #4198ed, #17b2f5, #27c9f6);
-       height: 100vh;
 
-}
 
 .auth-block {
        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-       /* background:  white; */
        backdrop-filter: blur(100px);
        display: flex;
        flex-direction: column;
@@ -17,5 +12,29 @@ body{
        border: 2px solid rgba(255, 255, 255, .5);
        border-radius: 20px;
        background: whitesmoke;
+
+      
+}  
+
+.auth-block:hover {
+       box-shadow: 0px 10px 20px 5px #e56c40;
+       transition: 0.7s;
+       transform: translateZ(-5px);
+}
+
+.btn-auth {
+       width: 35% ;
+       margin: 5% auto !important;
+       background: black !important;
+}
+
+.btn-auth:hover {
+       width: 35% ;
+       margin: 5% auto !important;
+       color:  #4198ed !important;
+       text-decoration: underline;
+       transition: 0.6s;
        
-}       
+}
+
+

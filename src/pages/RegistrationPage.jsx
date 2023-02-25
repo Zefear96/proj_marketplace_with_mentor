@@ -81,22 +81,11 @@ const RegistrationPage = () => {
         <Button
           onClick={() => register(username, password)}
           variant="contained"
-          style={{ width: "75%", margin: "5% auto", background: "black" }}
+          className="btn-auth"
         >
           Register
         </Button>
       </Box>
-      {/* <input
-        type="text"
-        placeholder="Username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      /> */}
-      {/* <button onClick={() => register(username, password)}>Register</button> */}
     </div>
   );
 };

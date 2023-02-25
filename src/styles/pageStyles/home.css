@@ -1,33 +1,67 @@
-.image {
-       position: absolute;
-       transform-origin: 0 50%;
-       width: 420px;
-       height: 420px;
-     }
-     
-     .background__image {
-       position: absolute;
-       transform-origin: 0 50%;
-       width: 420px;
-       height: 420px;
-       height: 840px;
-       transform: translateZ(0px) scale(1);
-     }
-     
-     .middle__image {
-       position: absolute;
-       transform-origin: 0 50%;
-       width: 420px;
-       height: 420px;
-       top: 150px;
-       transform: translateZ(5px) scale(parallax-scale-factor(5));
-     }
-     
-     .foreground__image {
-       position: absolute;
-       transform-origin: 0 50%;
-       width: 420px;
-       height: 420px;
-       top: 125px;
-       transform: translateZ(2px) scale(parallax-scale-factor(2));
-     }
+.card1 {
+  width: 100%;
+}
+
+.card2 {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.card3 {
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.img-card img {
+  width: 300px;
+  height: 250px;
+  box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+  border-radius: 20px;
+}
+
+.card-info span {
+  font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #272D4E;
+}
+
+.card-info p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #94A2B3;
+}
+
+.card-info a {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  color: #299EF3;
+  text-decoration: none;
+}
+
+.feature-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 8;
+    margin-bottom: 3rem;
+}
+
+.info-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-text span {
+    display: flex;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #272D4E;
+    padding: 2rem;
+}

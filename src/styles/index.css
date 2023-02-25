@@ -1,4 +1,40 @@
+* {
+       font-family: 'PT Sans', sans-serif;
+}
+
 body {
        margin: 0;
        padding: 0;
+       background-image: linear-gradient(to left top, #9c8bd0, #8c88bd, #7b81d8, #6270b2, #7a8bbc, #6d6fa4, #7b6da1, #886c9d, #ae6793, #ca657c, #d76e5c, #cf813a);
+       background-repeat: no-repeat !important;
+       height: 100% !important;
 }
+
+footer {
+       text-align: center;
+       background-color:#121212 !important;
+       color: white;
+       width: 100%;
+       height: fit-content;
+}
+
+.box-icons{
+       display: flex;
+       margin: auto;
+       padding: 10px;
+       justify-content: center;
+}
+
+.footer-icon{
+       background-color: white;
+       color: white;
+}
+
+footer > div > button > svg {
+       color: rgb(234, 224, 217);
+}
+
+#pagination {
+       color: white !important;
+}
+
